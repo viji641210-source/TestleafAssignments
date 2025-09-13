@@ -1,0 +1,13 @@
+API curl
+
+curl --location 'https://api.groq.com/openai/v1/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ' \
+--data-raw '{
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "messages": [{
+    "role": "user",
+    "content": "Context: You are an AI assistant to convert selenium java code for leaftaps to playwright. Given selenium java code convert into standalone playwright code that can be run in https://try.playwright.tech/?l=playwright-test Give only playwright script. do not add any text. Avoid conversations. Instructions: - Implementation guidelines: - Java 8+ features if appropriate - Use Playwright 1.52 or above version - use only inbuild libraries - Add comments whenever needed - [MANDATORY] Every method should have proper comments above method signature - Do not send any explanation or additional text - [CRITICAL] use right locators starting id, name, class, link text and finally xpath - [CRITICAL] give complete code without compilation errors. close all blocks Examples: - Example 1: //Java code package com.leaftaps.ui.tests; import java.time.Duration; import org.openqa.selenium.By; import org.openqa.selenium.chrome.ChromeDriver; /** * Test class to verify login functionality for Leaftaps application. */ public class LoginTest { /** * Main method to execute the login test. * @param args Command line arguments */ public static void main(String[] args) { // Step 1) Launch the chrome browser (Class Name -> ChromeDriver) ChromeDriver driver = new ChromeDriver(); // Step 2) Load the URL (http://leaftaps.com/opentaps/control/main) -> get driver.get(\"http://leaftaps.com/opentaps/control/main\"); // Step 2b) Add common time to wait for all/any elements to load (Write once) driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15)); // Step 3) Maximize the chrome browser driver.manage().window().maximize(); // Step 4) Find the username and type the value (DemoSalesManager) driver.findElement(By.id(\"username\")).sendKeys(\"DemoSalesManager\"); // Step 5) Find the password and type the value (crmsfa) driver.findElement(By.id(\"password\")).sendKeys(\"crmsfa\"); // Step 6) Find the login button and click driver.findElement(By.className(\"decorativeSubmit\")).click(); // Step 7) Verify the title String title = driver.getTitle(); System.out.println(title); // Step 8) Close the browser driver.quit(); } } Provide only playwright code and no explanations needed"
+  }]
+}
+'

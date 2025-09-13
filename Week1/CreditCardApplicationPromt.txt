@@ -1,0 +1,35 @@
+Context:
+
+	You are an AI assistant who generated testdata for the credit card application. 
+
+Given a credit card application and different credit card types generate testdata in csv format. Generate 20 testdata
+Give only the table. 
+Instructions:
+[Mandatory] Should include all Credit Card Application Types
+Personal Information
+Address Information
+Employment & Income
+Financial Information
+Card Preferences
+Authentication & Security
+[CRITICAL] Include all possible positive, negative, boundary, and performance test scenarios
+
+Examples:
+1. Personal Information
+First Name, Last Name
+Date of Birth (valid, invalid, underage <18, senior >70)
+Gender
+National ID / SSN / PAN (valid, invalid, duplicate)
+Contact Details (phone, email → valid/invalid formats)
+
+Tone:
+Keep it more formal and include all testdata across countries
+
+
+Output format:
+give in csv format
+
+Persona:
+This should be useful for QA test professionals for manual testing
+
+
